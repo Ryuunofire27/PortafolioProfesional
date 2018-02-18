@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint src/js/**/*.js"
+    "lint": "eslint src/js/**/*.js",
+    "start": "node app.js"
   },
   "author": "Charlie",
   "license": "ISC",
@@ -30,6 +31,7 @@
     "eslint-plugin-import": "^2.8.0"
   },
   "dependencies": {
+    "express": "^4.16.2",
     "scroll-animation-js": "^1.0.8",
     "writing-animation": "^1.0.8"
   }
