@@ -1,0 +1,14 @@
+extends template
+
+block header
+  header#top
+    h1=title
+    div.description
+    nav.navigator
+      ul.navigator-list
+        if(sections.length)
+          each section in sections
+            li
+              a(href="#" + section.hash)=section.name
+
+  block main

@@ -1,0 +1,35 @@
+extends template/header.pug
+
+block main
+
+  div.content
+    article
+
+      h2#aboutme Sobre Mi
+      div Soy un estudiante de Ingerieria de Software
+        |  al que le gusta desarrollar aplicaciones web
+        |  y aplicaciones moviles
+    article
+      h2#devpages Paginas Desarrollada
+      div.dev-page-description
+      div.carousel-container#carousel-container
+        div.carousel-container-img
+          img.carousel-container-img-item(src="img" alt="imagen para la animacion carousels")
+        div.carousel-button.carousel-prev-button#prev-button ‹
+        div.carousel-button.carousel-next-button#next-button ›
+      div.gallery-container#gallery-container
+        if(galleries.length)
+          each gallery in galleries
+            if(gallery.imgs.length)
+              -var img = gallery.imgs[0]
+                .gallery-item
+                  img(src="img/"+img.name + "-thumb." + img.ext alt=img.alt).gallery-img
+
+            //if(gallery.imgs.length)
+              each img in gallery.imgs
+                .gallery-item
+                  img(src="img/"+img.name + "-thumb." + img.ext alt=img.alt).gallery-img
+
+  include template/footer.pug
+  script(src="js/codigos.min.js")
+
